@@ -1,0 +1,16 @@
+# Hugo derleme çıktıları
+/public/
+/resources/_gen/
+
+# IDE/Editör dosyaları
+.idea/
+.vscode/
+*.swp
+
+# Sistem dosyaları
+Thumbs.db
+.DS_Store
+
+# Netlify CMS önbelleği
+/.cache/
+/node_modules/
