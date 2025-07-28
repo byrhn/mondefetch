@@ -5,3 +5,15 @@
 [context.production.environment]
   HUGO_VERSION = "0.126.3"  # GitHub'da mevcut SON STABIL EXTENDED SÜRÜM
   HUGO_EXTENDED = "true"    # Extended özelliği aktif
+
+  [[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    X-Frame-Options = "ALLOW-FROM https://mondefech.netlify.app"

@@ -2,9 +2,43 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- CMS konteyneri -->
+  <script>
+    // Netlify Identity ayarları
+    if (window.netlifyIdentity) {
+      netlifyIdentity.on('init', user => {
+        if (!user) {
+          netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+    
+    // Local geliştirme için özel ayar
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      localStorage.setItem('netlifySiteURL', 'https://mondefetch.netlify.app');
+    }
+  </script>
+
+  <script>
+  // Local ayarları
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    localStorage.setItem('netlifySiteURL', 'https://mondefetch.netlify.app');
+    // Aşağıdaki satırı EKLEYİN:
+    netlifyIdentity.init({ APIUrl: 'https://mondefetch.netlify.app/.netlify/identity' });
+  }
+
+  // Giriş kontrolü
+  netlifyIdentity.on('login', user => {
+    console.log('Giriş yapan:', user.email);
+    window.location.href = '/admin/#/collections/posts'; // Doğrudan posts sayfasına yönlendir
+  });
+</script>
 </body>
 </html>

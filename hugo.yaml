@@ -3,3 +3,10 @@ languageCode: en-us
 title: My New Hugo Site
 
 theme: "stack"
+
+build:
+  buildDrafts: true
+  buildFuture: true
+
+params:
+  mainSections: ["posts"]
