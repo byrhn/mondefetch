@@ -7,14 +7,14 @@
   HUGO_EXTENDED = "true"    # Extended özelliği aktif
 
   [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
+  from = "/identity/*"
+  to = "https://mondefetch.netlify.app/.netlify/identity/:splat"
   status = 200
   force = true
 
 # netlify.toml düzenlemesi
 [[headers]]
-  for = "/admin/*"
+  for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     X-Frame-Options = "ALLOW-FROM https://mondefetch.netlify.app" # Düzeltildi

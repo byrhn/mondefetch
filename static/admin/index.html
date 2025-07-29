@@ -27,5 +27,20 @@
       });
     });
   </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const siteUrl = 'https://mondefetch.netlify.app';
+    netlifyIdentity.init({
+      APIUrl: `${siteUrl}/.netlify/identity`,
+      logo: false // Logo hatasını önlemek için
+    });
+
+    // Zorunlu yönlendirme
+    netlifyIdentity.on('init', user => {
+      if(!user) netlifyIdentity.open('login');
+    });
+  });
+</script>
 </body>
 </html>
