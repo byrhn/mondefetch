@@ -1,5 +1,5 @@
 ---
-title: deneme
-date: 2025-07-28T10:30:48.552Z
+title: "Sample Post"
+date: 2025-07-28
 ---
-d﻿eneme
+This is a sample post.

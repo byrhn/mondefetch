@@ -1,7 +1,6 @@
-baseURL: https://example.org/
+baseURL: https://mondefetch.com/
 languageCode: en-us
-title: My New Hugo Site
-
+title: MondeFetch
 theme: "stack"
 
 build:
@@ -10,3 +9,46 @@ build:
 
 params:
   mainSections: ["posts"]
+  search:
+    enable: true
+  widgets:
+    homepage:
+      - type: search
+      - type: categories
+      - type: tag-cloud
+      - type: archives
+
+  sidebar:
+    avatar:
+      enabled: true
+      local: true
+      #src: images/avatar.png   # themes/stack/assets/img/avatar.png veya static/images/avatar.png
+    subtitle: "affilate, blog, news, and more"
+    social:
+      github: "https://github.com/kullaniciadiniz"
+      twitter: "https://twitter.com/kullaniciadiniz"
+      facebook: "https://www.facebook.com/kullaniciadiniz"
+      instagram: "https://www.instagram.com/kullaniciadiniz"
+      linkedin: "https://www.linkedin.com/in/kullaniciadiniz"
+      youtube: "https://www.youtube.com/channel/kullaniciadiniz"
+      rss: "https://mondefetch.com/index.xml"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "About"
+      url: "/page/about"
+      weight: 2
+    - name: "Archives"
+      url: "/page/archives"
+      weight: 3
+    - name: "Search"
+      url: "/page/search"
+      weight: 4
+    - name: "Links"
+      url: "/page/links"
+      weight: 5
+
+
