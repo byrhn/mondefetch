@@ -12,8 +12,9 @@
   status = 200
   force = true
 
+# netlify.toml düzenlemesi
 [[headers]]
   for = "/admin/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-    X-Frame-Options = "ALLOW-FROM https://mondefech.netlify.app"
+    X-Frame-Options = "ALLOW-FROM https://mondefetch.netlify.app" # Düzeltildi
